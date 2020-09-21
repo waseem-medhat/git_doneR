@@ -15,16 +15,10 @@ if (nrow(git_status()) == 0) {
 } else {
   git_add(".")
   git_commit(args[1])
+  cat(paste("Successfully added", args[1]))
 }
 
-tryCatch(
-  {
-    git_pull()
-    cat("Successfully pulled!\n")
-    git_push()
-    cat("Successfully pushed!\n")
-  },
-  error = function() {
-    cat("Problem with pushing... exiting")
-  }
-)
+git_pull()
+cat("Successfully pulled!\n")
+git_push()
+cat("Successfully pushed!\n")

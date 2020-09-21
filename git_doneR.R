@@ -15,7 +15,7 @@ if (nrow(git_status()) == 0) {
 } else {
   git_add(".")
   git_commit(args[1])
-  cat(paste("Successfully added", args[1]))
+  cat(paste("Successfully added", args[1], "\n"))
 }
 
 git_pull()

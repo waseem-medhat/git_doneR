@@ -8,6 +8,11 @@ if (length(args) == 0) {
   q("no")
 }
 
+if (nrow(git_status()) == 0) {
+  cat("Nothing to commit... exiting\n")
+  q("no")
+}
+
 git_add(".")
 git_commit(args[1])
 git_pull()

@@ -16,6 +16,6 @@ if (nrow(git_status()) == 0) {
 git_add(".")
 git_commit(args[1])
 git_pull()
-cat("Successfully pulled!")
+cat("Successfully pulled!\n")
 git_push()
-cat("Successfully pushed!")
+cat("Successfully pushed!\n")
